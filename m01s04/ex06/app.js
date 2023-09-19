@@ -118,6 +118,41 @@ console.warn(
   afiseaza in ordine inversa elementele arrayului skills.
   Atentie, va trebui sa numeri invers, de la length la 0.`,
 );
-for (var i = person.skills.length - 1; i  0; i++) {
+for (var i = person.skills.length - 1; i >= 0; i--) {
   console.log(person.skills[i]);
 }
+
+console.warn(`Folosind obiectul person si un for, afiseaza
+in consola skillurile pe care le are persoana sub forma de propozitii
+"Tehnologia xxx are yyy caractere.".
+`);
+for (var i = 0; i < person.skills.length; i++) {
+  var skill = person.skills[i];
+  console.log('Tehnologia ' + skill + ' are ' + skill.length + ' caractere.');
+}
+
+console.warn` In mod similar, afiseaza skillurile care incep cu c, folosind propozitii de forma
+"Tehnologia xxx incepe cu litera "c".".`;
+for (var i = 0; i < person.skills.length; i++) {
+  var firstLetter = person.skills[i][0];
+  if (firstLetter === 'c') {
+    console.log('Tehnologia ' + person.skills[i] + ' incepe cu litera "c."');
+  }
+}
+
+console.warn(
+  `Folosind un for afiseaza propozitia: "Numele de familie ale prietenilor mei sunt: xxx, xxx, xxx."`,
+);
+var message = 'Numele de familie ale prietenilor mei sunt: ';
+for (var i = 0; i < person.friends.length; i++) {
+  var punctuation = ', ';
+  var friendSurname = person.friends[i];
+
+  if (i === person.friends.length - 1) {
+    punctuation = '.';
+  }
+
+  message = message + friendSurname.surname + punctuation;
+}
+
+console.log(message);
