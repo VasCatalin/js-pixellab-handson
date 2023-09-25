@@ -253,8 +253,6 @@ for (i = person.friends.length - 1; i >= 0; i--) {
 }
 console.log(message);
 
-console.warn(`html se afla pe indexul 0 al arrayului.`);
-
 console.warn(
   `Metoda console.log ar fi trebuit chemata cu valoarea:
   "Suma anilor de nastere este: 5934.".`,
@@ -268,3 +266,12 @@ for (i = 0; i < person.friends.length; i++) {
   total = total + bornYear;
 }
 console.log('Suma anilor de nastere este: ' + total.toString() + '.');
+
+console.warn(`"html se afla pe indexul 0 al arrayului.".`);
+for (i = 0; i < person.skills.length; i++) {
+  var skill = person.skills[i];
+
+  if (i % 2 !== 1) {
+    console.log(skill + ' se afla pe indexul ' + i + ' al arrayului.');
+  }
+}
