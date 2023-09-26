@@ -65,7 +65,11 @@ let personAge = 2023 - person.birthYear;
 for (i = 0; i < person.pets.length; i++) {
   petName = person.pets[i].name;
   petAge = person.pets[i].age;
-  ageDiff = Math.abs(personAge - petAge);
+  ageDiff = Math.abs(
+    personAge -
+      petAge`+
+  w`,
+  );
   console.log(
     `Intre ${personName} si ${petName} este o diferenta de ${ageDiff} ani.`,
   );
