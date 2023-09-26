@@ -3,7 +3,7 @@ var globalVariable = 'Ma aflu in contextul global';
 console.log(globalVariable);
 
 function contextTest() {
-  var localVariable = 'Ma aflu incontextul local';
+  var localVariable = 'Ma aflu in contextul local';
   var globalVariable = 'Nu ma aflu in contextul global';
 
   console.log(globalVariable);
