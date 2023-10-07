@@ -27,3 +27,28 @@ cati litri de bere va produce un teren de 400m pe 370m?
 const field3Yield = calculateRectangleArea(400, 370) * barleyYield;
 const field3BeerYield = field3Yield * beerYield;
 console.log(field3BeerYield);
+
+console.warn(`Stiind ca un camp dreptunghiular de grau produce 32kg/m2  de faina,
+afla si afiseaza cate kilograme de paine produce un camp de 300 pe 200 metri,
+stiind ca dintr-un kilogram de faina ies 2.5 kg de paine.`);
+const flourFieldLength = 300;
+const flourFieldWidth = 200;
+const flourProductionSquare = 32;
+let breadProduction =
+  calculateRectangleArea(flourFieldLength, flourFieldWidth) *
+  flourProductionSquare *
+  2.5;
+console.log(breadProduction);
+
+console.warn(`Dar doua campuri de 150 pe 200 si 500 pe 300 in total?
+`);
+const dimension1 = 150;
+const dimension2 = 200;
+const dimension3 = 500;
+const dimension4 = 300;
+breadProduction =
+  (calculateRectangleArea(dimension1, dimension2) +
+    calculateRectangleArea(dimension3, dimension4)) *
+  flourProductionSquare *
+  2.5;
+console.log(breadProduction);

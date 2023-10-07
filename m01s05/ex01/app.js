@@ -9,7 +9,7 @@ function getTime() {
     .toString()
     .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${miliseconds
     .toString()
-    .padStart(4, '0')}`;
+    .padStart(2, '0')}`;
 }
 
 const exactTime = getTime();
@@ -18,4 +18,3 @@ console.log(`${exactTime}, am ajuns la Pixellab`);
 
 const messageElement = document.getElementById('message');
 messageElement.innerText = `${exactTime}, am ajuns la Pixellab.`;
-// de verificat!!!
