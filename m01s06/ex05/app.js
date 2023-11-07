@@ -43,3 +43,19 @@
     }
   });
 })();
+
+console.warn(`Adauga un buton in document pe care cand apesi, sunt eliminate celelate butoane
+cu metoda .remove() (puteti sa-l scrieti direct in HTML cu id=”removeButtons”)
+`);
+const removeButtons = document.getElementById('removeButtons');
+removeButtons.addEventListener('click', function () {
+  const confirmMessage = 'Esti sigur ca vrei sa stergi butoanele din DOM?';
+  const userConfirmed = confirm(confirmMessage);
+
+  if (userConfirmed) {
+    const buttons = document.querySelectorAll('.removeButton');
+    buttons.forEach(function (button) {
+      button.remove();
+    });
+  }
+});

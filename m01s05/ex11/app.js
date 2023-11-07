@@ -46,6 +46,24 @@ var pet = {
     return 'Sarpe';
   },
   getAge: function () {
-    return;
+    return 10;
   },
 };
+
+console.warn(`Folosind metodele obiectului pet afiseaza propozitia: “nnnn este ssss si are aaaa ani.”
+`);
+console.log(
+  pet.getName() +
+    ' este ' +
+    pet.getSpecies() +
+    ' si are ' +
+    pet.getAge() +
+    ' ani.',
+);
+
+console.warn(`Folosind metoda getAge calculeaza si salveaza intr-o variabila numita petAge
+varsta animalului si afiseaza propozitia: “Animalul meu are petAge ani”
+`);
+
+petAge = pet.getAge();
+console.log('Animalul meu are ' + petAge + ' ani.');

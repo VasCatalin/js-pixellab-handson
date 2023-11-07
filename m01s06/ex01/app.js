@@ -5,12 +5,30 @@ const car = {
   speed: 50,
   isTrunkOpen: false,
   areLightsOn: false,
+  topSpeed: 160,
+  topReverseSpeed: -50,
 
   accelerate: function () {
     this.speed++;
   },
+
   decelerate: function () {
     this.speed--;
+  },
+
+  setSpeed: function (speed) {
+    if (speed < this.topReverseSpeed) {
+      this.speed = this.topReverseSpeed;
+    } else if (speed > this.topSpeed) {
+      this.speed = this.topSpeed;
+    } else {
+      this.speed = speed;
+    }
+    return speed;
+  },
+
+  stop: function () {
+    this.speed = 0;
   },
 
   openTrunk: function () {
