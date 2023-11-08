@@ -3,7 +3,7 @@ const Car = {
   color: '',
   wheels: 0,
   speed: 0,
-  topSpeed: 260,
+  topSpeed: 140,
   topReverseSpeed: -50,
 
   displaySpeed: function () {
@@ -11,15 +11,45 @@ const Car = {
   },
 
   accelerate: function () {
-    this.speed++;
+    this.speed = this.speed + 1;
 
     this.displaySpeed();
   },
 
   decelerate: function () {
-    this.speed--;
+    this.speed = this.speed - 1;
 
     this.displaySpeed();
+  },
+
+  setSpeed(speed) {
+    if (speed > this.topSpeed) {
+      speed = this.topspeed;
+    }
+
+    if (speed < this.topReverseSpeed) {
+      speed = this.topReverseSpeed;
+    }
+
+    this.speed = speed;
+    this.displaySpeed();
+  },
+
+  areLightsOn: false,
+  turnLihtsOn() {
+    this.areLightsOn = true;
+  },
+
+  turnLihtsOff() {
+    this.areLightsOn = false;
+  },
+
+  flashLights() {
+    this.turnLightsOn();
+
+    setTimeout(() => {
+      this.turnLightsOff();
+    }, 2000);
   },
 };
 
@@ -30,3 +60,14 @@ audi.wheels = 4;
 audi.speed = 0;
 
 console.log(audi);
+
+console.warn(`Adauga metoda setSpeed(), proprietatile topSpeed si topReverseSpeed si implementeaza
+protectiile deja cunoscute.
+
+Seteaza topSpeed la 140 apoi ruleaza metoda setSpeed() pentru a face viteza curenta 140.
+
+Ruleaza metoda accelerate().
+`);
+
+audi.setSpeed(140);
+audi.accelerate();

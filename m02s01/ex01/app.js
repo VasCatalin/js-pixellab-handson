@@ -33,9 +33,44 @@ class Car {
     }
     this.speed = speed;
   }
+
+  isTrunkOpen = false;
+
+  openTrunk() {
+    this.isTrunkOpen = true;
+  }
+
+  closeTrunk() {
+    this.isTrunkOpen = false;
+  }
+
+  areLightsOn = false;
+  turnLightsOn() {
+    this.areLightsOn = true;
+  }
+
+  turnLightsOff() {
+    this.areLightsOn = false;
+  }
+
+  flashLights() {
+    this.turnLightsOn();
+
+    setTimeout(() => {
+      this.turnLightsOff();
+    }, 2000);
+  }
 }
 
 const audi = new Car('Audi', 'black', 4, 50);
 const opel = new Car('Opel', 'red', 4, 3);
-
 const cars = [audi, opel];
+
+cars.forEach(function (car) {
+  car.accelerate();
+  car.accelerate();
+  car.accelerate();
+  car.accelerate();
+  car.accelerate();
+  console.log(`Viteza noua este ${car.speed} km/h.`);
+});

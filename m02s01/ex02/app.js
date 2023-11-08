@@ -1,12 +1,5 @@
 class Vehicle {
-  constructor(
-    make,
-    color,
-    wheels,
-    speed,
-    topSpeed = 160,
-    topReverseSpeed = -50,
-  ) {
+  constructor(make, color, wheels, speed, topSpeed = 160, topReverseSpeed = 0) {
     this.make = make;
     this.color = color;
     this.wheels = wheels;
@@ -40,24 +33,21 @@ class Vehicle {
     this.displaySpeed();
   }
 }
-
 class Car extends Vehicle {
   constructor(make, color, speed, topSpeed, topReverseSpeed) {
     super(make, color, 4, speed, topSpeed, topReverseSpeed);
   }
 }
-
 class Bicycle extends Vehicle {
   constructor(make, color, speed, topSpeed) {
     super(make, color, 2, speed, topSpeed, 0);
   }
+}
 
-  // exemplu naiv de polimorfism.
-  // decelerate() {
-  //   if (--this.speed < 0) {
-  //     this.speed = 0;
-  //   }
-  // }
+class Tricycle extends Vehicle {
+  constructor(make, color, speed, topSpeed, topReverseSpeed) {
+    super(make, color, 3, speed, topSpeed, topReverseSpeed);
+  }
 }
 
 const bike = new Bicycle('Pegas', 'red', 8, 20);
@@ -65,3 +55,10 @@ bike = setSpeed(2);
 bike.decelerate();
 bike.decelerate();
 bike.decelerate();
+
+const trike = new Tricycle('Trike', 'red', 2, -2, 9);
+trike = setSpeed(0);
+trike.decelerate();
+trike.decelerate();
+trike.decelerate();
+trike = setSpeed(-10);
