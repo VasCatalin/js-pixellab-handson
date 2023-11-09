@@ -1,7 +1,8 @@
 const image = document.querySelector('.image');
+const messageContainer = document.createElement('p');
 
 function showMessage(message) {
-  const messageContainer = document.createElement('p');
+  message = 'Imaginea se incarca…';
   messageContainer.innerText = message;
 
   // side effect
@@ -10,4 +11,6 @@ function showMessage(message) {
 
 image.addEventListener('load', function () {
   showMessage('Imaginea s-a incarcat!');
+  message = 'Imaginea s-a incarcat!';
+  messageContainer.innerText = message;
 });
